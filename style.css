@@ -1,0 +1,457 @@
+/* General Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f0ff;
+    /* Light purple background */
+    color: #333333;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: #3d1e6d;
+    /* Dark purple for headings */
+    margin-bottom: 1rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: #555555;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #a29bfe;
+    /* Light purple hover for links */
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar li {
+    font-weight: 500;
+}
+
+.nav-link {
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #9b59b6;
+    /* Purple for active and hover states */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Home Section with Slides */
+.home-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+.next-slide:hover {
+    background-color: rgba(61, 30, 109, 0.6);
+    /* Darker on hover */
+}
+
+/* About Me Section */
+.about-section {
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f0ff;
+    /* Light purple */
+}
+
+.about-content {
+    display: flex;
+    gap: 4rem;
+    width: 100%;
+}
+
+.about-card {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about-card h2 {
+    font-size: 2rem;
+    color: #3d1e6d;
+    /* Dark purple */
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* Experience Section */
+.experience-section {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+}
+
+.experience-section h2 {
+    font-size: 2.5rem;
+    color: #3d1e6d;
+    /* Dark purple */
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experience-slider {
+    display: flex;
+    gap: 3rem;
+    overflow-x: scroll;
+    padding-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+}
+
+.experience-slide {
+    width: 400px;
+    background-color: #f0e6ff;
+    /* Light purple background */
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out
+}
+
+.experience-slide h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.experience-slide p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.experience-slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #9b59b6;
+}
+
+.experience-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.experience-slide:hover::before {
+    opacity: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #333333;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 6rem 2rem;
+    background-color: #f3f0ff;
+    /* Light purple */
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    color: #3d1e6d;
+    /* Dark purple */
+    margin-bottom: 3rem;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.skill-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #3d1e6d;
+    /* Dark purple */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-circle:hover {
+    transform: scale(1.1);
+    background-color: #9b59b6;
+    /* Light purple hover */
+    color: #ffffff;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    color: #3d1e6d;
+    /* Dark purple */
+    text-align: center;
+    margin-bottom: 3rem;
+
+}
+
+.project-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    padding-bottom: 2rem;
+    scroll-snap-type: x mandatory;
+}
+
+.project-card {
+    width: 300px;
+    background-color: #f0e6ff;
+    /* Light purple */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    scroll-snap-align: center;
+    cursor: pointer;
+
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #9b59b6;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #333333;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Badge Section */
+.badge-section {
+    padding: 4rem 2rem;
+    background-color: #f3f0ff;
+    /* Light purple */
+    text-align: center;
+}
+
+.badge-section h2 {
+    font-size: 2rem;
+    color: #3d1e6d;
+    /* Dark purple */
+    margin-bottom: 2rem;
+}
+
+.badge-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.badge-card {
+    min-width: 180px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
+.follow-us-icon-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    margin: 15px;
+    padding-top: 22px;
+    padding-bottom: 14px;
+    padding-right: 16px;
+    padding-left: 22px;
+    font-size: 35px;
+
+}
+
+.icon {
+    color: #3d1e6d;
+    /* Dark purple */
+    font-size: 55px;
+    width: 10px;
+    height: 100px;
+    background-color: #9b59b6;
+}
+
+.contact-section {
+    background-color: white;
+    /* Background color */
+    color: black;
+    /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    /* Rounded corners */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    /* Space above the section */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover */
+}
+
+.contact-section:hover {
+    background-color: #9b59b6;
+    /* Change background to purple on hover */
+    color: white;
+    /* Change text color to white on hover */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    gap: 10px;
+    /* Space between items */
+}
+
+
+
+.contact-item a {
+    color: purple;
+    /* Link color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.contact-icons a {
+    font-size: 2rem;
+    color: #3d1e6d;
+    margin: 0 1rem;
+}
+
+.contact-icons a:hover {
+    color: #6a1b9a;
+}
